@@ -15,7 +15,6 @@ class DetailActivity : AppCompatActivity() {
         const val EXTRA_USER = "extra_user"
     }
 
-    @SuppressLint("RestrictedApi")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityDetailBinding.inflate(layoutInflater)
@@ -24,7 +23,7 @@ class DetailActivity : AppCompatActivity() {
         val user = intent.getParcelableExtra<User>(EXTRA_USER) as User
         val actionBar = supportActionBar
 
-        actionBar!!.title = "Detail User"
+        actionBar?.title = "Detail User"
 
         binding.apply {
             txtName.text = user.name
